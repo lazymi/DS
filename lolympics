@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+   int n,k,i,j;
+   scanf("%d%d",&n,&k);
+   int arr1[n];
+   char arr2[n][15];
+   char arr3[15];
+   int k1;
+   for(i=0;i<n;i++)
+   {
+       scanf("%s",&arr2[i]);
+       scanf("%d",&arr1[i]);
+   }
+   for(i=0;i<n;i++)
+   {
+       for(j=0;j<n-1;j++)
+       {
+           if(arr1[j]<arr1[j+1])
+           {
+               strcpy(arr3,arr2[j+1]);
+               strcpy(arr2[j+1],arr2[j]);
+               strcpy(arr2[j],arr3);
+               k1=arr1[j+1];
+               arr1[j+1]=arr1[j];
+               arr1[j]=k1;
+           }
+           else if(arr1[j]==arr1[j+1] && strcmp(arr2[j],arr2[j+1])>0)
+           {
+               strcpy(arr3,arr2[j+1]);
+               strcpy(arr2[j+1],arr2[j]);
+               strcpy(arr2[j],arr3);
+           }
+
+       }
+   }
+    for(i=0;i<k;i++)
+    {
+       printf("%s",arr2[i]);
+       printf("   %d\n",arr1[i]);
+    }
+    return 0;
+}

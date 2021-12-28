@@ -1,0 +1,90 @@
+insert
+ node* AddFront(node* tail, int num)
+{
+	node *temp = (node*)malloc(sizeof(node));
+	temp->data = num;
+	temp->next = temp;	
+	if (tail == NULL) 
+		return temp;
+	temp->next = tail->next;
+	tail->next = temp;
+	return tail;
+}
+ 
+ 
+deletion at begining
+
+void delete_first(struct link *node)
+ 
+{
+ 
+	node=start->next;
+ 
+	ptr=start;
+ 
+	if(i==0)
+ 
+	{
+ 
+		printf("\n List is empty");
+ 
+		exit(0);
+ 
+	}
+ 
+	ptr->next=node->next;
+ 
+	free(node);
+ 
+	i--;
+ 
+}
+
+orrr
+
+void del()
+{
+temp=front;
+if(front==NULL)
+printf("\nUnderflow :");
+else
+{
+if(front==rear)
+{
+printf("\n%d",front->info);
+front=rear=NULL;
+}
+else
+{
+printf("\n%d",front->info);
+front=front->next;
+rear->next=front;
+}
+ 
+temp->next=NULL;
+free(temp);
+}
+}
+
+
+create
+
+void create()
+{
+node *newnode;
+newnode=(node*)malloc(sizeof(node));
+printf("\nEnter the node value : ");
+scanf("%d",&newnode->info);
+newnode->next=NULL;
+if(rear==NULL)
+front=rear=newnode;
+else
+{
+rear->next=newnode;
+rear=newnode;
+}
+rear->next=front;
+}
+
+
+ 
